@@ -56,6 +56,19 @@ export function App() {
     );
   }, [players]);
 
+  useEffect(() => {
+    if (players && players.length > 0) {
+      localStorage.setItem("players", JSON.stringify(players));
+    }
+  }, [players]);
+
+  useEffect(() => {
+    const str = localStorage.getItem("players");
+    if (str) {
+      setPlayers(JSON.parse(str));
+    }
+  }, []);
+
   return (
     <div className="app">
       <div className="grid" style={{ gridTemplateColumns }}>
@@ -80,7 +93,7 @@ export function App() {
             <input
               key={index}
               type="text"
-              inputmode="numeric"
+              inputMode="numeric"
               value={player.scores[row]}
               onChange={(e) => updateScore(index, row, e.target.value)}
             />
