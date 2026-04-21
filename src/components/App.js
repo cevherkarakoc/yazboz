@@ -80,6 +80,7 @@ export function App() {
             <input
               key={index}
               type="text"
+              inputmode="numeric"
               value={player.scores[row]}
               onChange={(e) => updateScore(index, row, e.target.value)}
             />
