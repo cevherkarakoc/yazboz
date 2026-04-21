@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" style="overflow-y: auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yazboz</title>
+    <style>
+      :root {
+        --border-color: rgba(33, 30, 106, 0.533);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .grid {
+        width: 100%;
+        display: grid;
+        gap: 1px;
+        background-color: var(--border-color);
+        border-top: 1px solid var(--border-color);
+        border-left: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+      }
+
+      .grid div {
+        background-color: white;
+        text-align: center;
+      }
+
+      .grid input {
+        width: 100%;
+        border: none;
+        text-align: center;
+        outline: none;
+        font-size: 16px;
+        padding: 6px 0px;
+      }
+
+      .footer {
+        position: relative;
+        width: 100%;
+        background-color: #e7eff6;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 10px 10px;
+        box-shadow: 0 0px 16px 0px rgba(0, 0, 0, 0.4);
+        border-top: #00bfa6 1px solid black;
+      }
+
+      .scroll {
+        height: calc(100vh - 128px);
+        overflow-y: scroll;
+      }
+
+      button {
+        height: 100%;
+        background-color: #63ace5;
+        padding: 20px 12px;
+        color: #fff;
+        letter-spacing: 2px;
+        cursor: pointer;
+        border-radius: 10px;
+        border: 2px dashed #4b86b4;
+        box-shadow:
+          rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        transition: 0.4s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .title {
+        font-weight: bold;
+        color: white;
+        background-color: #4b86b4;
+      }
+
+      .grid .total {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ee5d6c;
+        background-color: #adcbe3;
+        padding: 6px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
