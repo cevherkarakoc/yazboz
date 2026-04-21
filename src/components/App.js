@@ -7,10 +7,16 @@ export function App() {
 
   const addPlayer = useCallback(() => {
     const player = {
-      name: "Oyuncu" + (players.length + 1),
+      name: "O " + (players.length + 1),
       scores: Array.from({ length: 100 }).fill(""),
     };
     setPlayers((players) => [...players, player]);
+  }, [players, setPlayers]);
+
+  const removePlayer = useCallback(() => {
+    if (players.length > 1) {
+      setPlayers(players.slice(0, players.length - 1));
+    }
   }, [players, setPlayers]);
 
   const reset = useCallback(() => {
@@ -39,7 +45,7 @@ export function App() {
 
   useEffect(() => {
     const _players = Array.from({ length: 4 }).map((_, i) => ({
-      name: "Oyuncu " + (i + 1),
+      name: "O " + (i + 1),
       scores: Array.from({ length: 100 }).fill(""),
     }));
 
@@ -103,7 +109,7 @@ export function App() {
       <div className="footer">
         <button onClick={reset}>Temizle</button>
         <button onClick={addPlayer}>Oyuncu Ekle</button>
-        <button onClick={addPlayer}>Oyuncu Çıkar</button>
+        <button onClick={removePlayer}>Oyuncu Çıkar</button>
       </div>
     </div>
   );
